@@ -6,6 +6,7 @@ require('./database/db.connection');
 //MIDDLEWEARS
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 //MAIN ROUTE
 app.use(require('./routes/index'));
