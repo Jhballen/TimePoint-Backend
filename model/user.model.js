@@ -7,10 +7,10 @@ const Task = require('./task.model');
 
 //SCHEMA OF THE USER COLLECTION
 const userSchema = new Schema({
-    name: String,
     mail: mongoose.SchemaTypes.Email,
     password: String,
     profilePicture: Number,
+    type: String,
     tasks: [{type: ObjectId, ref:Task }]
 });
 
