@@ -1,6 +1,7 @@
 //DECLARATIONS
 const express = require('express');
 const app = express();
+const cors = require('cors');
 require('./database/db.connection');
 
 //MIDDLEWEARS
