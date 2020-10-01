@@ -12,6 +12,6 @@ app.use(cors());
 //MAIN ROUTE
 app.use(require('./routes/index'));
 
-app.listen(8082, ()=>{
+app.listen(process.env.PORT || 8082, ()=>{
     console.log('SERVER IS LISTEN ON PORT 8082');
 });
