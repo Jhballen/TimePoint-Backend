@@ -28,7 +28,7 @@ userController.post = async function(req, res){
                 });
             }else{
                 const token = jws.sign({type:newUser.type}, 'timepoint');
-                res.send(token);
+                res.send(newUser);
             }
         });
     }
