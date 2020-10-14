@@ -15,7 +15,7 @@ router.post('/task', taskController.post);
 
 
 //USER
-router.get('/user', verifyToken , userController.getAll);
+router.get('/user' , userController.getAll);
 router.post('/user', userController.post);
 
 router.post('/singin', sessionController.post);
