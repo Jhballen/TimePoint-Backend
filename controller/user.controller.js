@@ -14,6 +14,18 @@ userController.getAll = async function(req, res){
         });
     }
 };
+
+userController.getByUsername = async function(req, res){
+    try {
+        const data = await userModel.findOne({mail: req.params.username});
+        res.send(data);
+    } catch (err) {
+        res.status(500).send({
+            menssage: 'ERROR IN THE DATABASE'
+        });
+    }
+}
+
 userController.post = async function(req, res){
     if(!req.body){
         res.status(500).send({
