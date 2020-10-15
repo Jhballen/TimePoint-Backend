@@ -39,11 +39,27 @@ taskController.post = async function(req,res){
 
 taskController.delete = async function(req, res){
     try{    
-        const id= req.params._id;
+        const id= req.params._idTask;
         const data = await taskModel.deleteOne({_id:id});
         res.send(data);
 
     }catch(err){
+        res.status(500).send({
+            menssage: 'ERROR IN THE DATABASE'
+        });
+    }
+}
+
+taskController.put = async function(req, res){
+    try{    
+        const id= req.params._idTask;
+        const status= req.body.status;
+        const data = await taskModel.update({_id:id},{status: status});
+        console.log(data)
+        res.send(data);
+
+    }catch(err){
+        console.log(err);
         res.status(500).send({
             menssage: 'ERROR IN THE DATABASE'
         });
