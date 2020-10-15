@@ -5,8 +5,8 @@ const taskController = {};
 
 taskController.getAll = async function(req,res){
 
-    try{
-        
+    try{    
+
         const data = await taskModel.find();
         res.send(data);
 
@@ -36,5 +36,19 @@ taskController.post = async function(req,res){
         });
     }
 };
+
+taskController.delete = async function(req, res){
+    try{    
+        const id= req.params._id;
+        const data = await taskModel.deleteOne({_id:id});
+        res.send(data);
+
+    }catch(err){
+        res.status(500).send({
+            menssage: 'ERROR IN THE DATABASE'
+        });
+    }
+}
+
 
 module.exports = taskController;
