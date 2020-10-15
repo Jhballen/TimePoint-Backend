@@ -12,6 +12,7 @@ const sessionController = require('../controller/session.controller');
 //TASK
 router.get('/task', taskController.getAll);
 router.post('/task', taskController.post);
+router.delete('/task/:_id', taskController.delete);
 
 
 //USER
