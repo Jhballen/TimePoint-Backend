@@ -27,6 +27,8 @@ router.post('/singin', sessionController.post);
 router.get('/profile', profileController.getAll);
 router.get('/profile/:UserId', profileController.getById);
 router.post('/profile', profileController.post);
+router.delete('/profile', profileController.delele);
+router.put('/profile', profileController.update);
 
 //AUTHENTIFICATION
 
