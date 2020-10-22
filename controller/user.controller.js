@@ -1,6 +1,6 @@
 require('../database/db.connection');
 const userModel = require('../model/user.model');
-const userSchema = require('../model/user.model');
+const profileSchema = require('../model/profile.model');
 const userController = {};
 const jws = require('jsonwebtoken');
 
