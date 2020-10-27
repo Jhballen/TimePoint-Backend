@@ -8,6 +8,7 @@ router.get('/', (req,res)=> res.send('BIENVENIDO A EL BACKEND DE TIMEPOINT'))
 const taskController = require('../controller/task.controller');
 const userController = require('../controller/user.controller');
 const sessionController = require('../controller/session.controller');
+const profileController = require('../controller/profile.controller');
 
 //TASK
 router.get('/task', taskController.getAll);
@@ -21,6 +22,13 @@ router.get('/user' , userController.getAll);
 router.post('/user', userController.post);
 router.get('/user/:username', userController.getByUsername);
 router.post('/singin', sessionController.post);
+
+//PROFILE
+router.get('/profile', profileController.getAll);
+router.get('/profile/:UserId', profileController.getById);
+router.post('/profile', profileController.post);
+router.delete('/profile', profileController.delele);
+router.put('/profile', profileController.update);
 
 //AUTHENTIFICATION
 

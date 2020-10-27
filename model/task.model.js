@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {ObjectId} = require('mongoose');
 const { Schema } = mongoose;
-const User = require('./user.model');
+const Profile = require('./profile.model');
 
 //SCHEMA OF THE USER COLLECTION
 const taskSchema = new Schema({
@@ -10,7 +10,7 @@ const taskSchema = new Schema({
     status: Number,
     endDate: Date,
     evidence: String,
-    users: [{type: ObjectId, ref:User }]
+    profile: [{type: ObjectId, ref:Profile }]
 });
 
 module.exports = mongoose.model('tasks',taskSchema);
