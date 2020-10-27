@@ -8,6 +8,8 @@ const taskSchema = new Schema({
     title: String,
     description: String,
     status: Number,
+    endDate: Date,
+    evidence: String,
     users: [{type: ObjectId, ref:User }]
 });
 
