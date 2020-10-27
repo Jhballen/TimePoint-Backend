@@ -24,6 +24,28 @@ profileController.getById = async function(req, res){
     }
 }
 
+profileController.delele = async function(req, res) {
+    try {
+        const id = req.params.UserId;
+        const data = await profileModel.delele({_id:id});
+        res.send(data);
+    } catch (err) {
+        res.status(500).send({
+            menssage: 'ERROR IN THE DATABASE'
+        });
+    }
+}
+
+profileController.update = async function(req, res){
+    try {
+        const data = await profileModel({ _id: req.body._id }, {name: req.body.name, picture: req.body.profilePicture});
+    } catch (err) {
+        res.status(500).send({
+            menssage: 'ERROR IN THE UPDATE'
+        });
+    }
+}
+
 profileController.post = async function(req, res){
     if (!req.body) {
         res.status(500).send({
