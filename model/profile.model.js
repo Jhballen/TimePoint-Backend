@@ -8,6 +8,9 @@ const profileSchema = new Schema({
     userId: {type: ObjectId, ref:User},
     name: String,
     tasks: [{type: ObjectId, ref:Task }],
+    knowledge: Number,
+    strength: Number,
+    skill: Number,
     profilePicture: Number
 });
 
