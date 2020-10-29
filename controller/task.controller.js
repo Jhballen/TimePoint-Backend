@@ -55,7 +55,13 @@ taskController.put = async function(req, res){
     try{    
         const id= req.params._idTask;
         const status= req.body.status;
-        const data = await taskModel.update({_id:id},{status: status});
+        const title = req.body.title;
+        const date = req.body.date;
+        const profile = req.body.profile;
+        const description = req.body.description;
+        const evidence = req.body.evidence;
+        const data = await taskModel.update({_id:id}, {status: status},
+        {title:title}, {description:description}, {date:date}, {evidence:evidence}, {profile:profile} );
         console.log(data)
         res.send(data);
 
@@ -66,6 +72,8 @@ taskController.put = async function(req, res){
         });
     }
 }
+
+
 
 
 module.exports = taskController;

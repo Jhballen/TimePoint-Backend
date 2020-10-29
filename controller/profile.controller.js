@@ -38,7 +38,8 @@ profileController.delele = async function(req, res) {
 
 profileController.update = async function(req, res){
     try {
-        const data = await profileModel({ _id: req.body._id }, {name: req.body.name, picture: req.body.profilePicture});
+        const data = await profileModel({ _id: req.body._id }, 
+            {name: req.body.name, picture: req.body.profilePicture}, {tasks: req.body.tasks});
     } catch (err) {
         res.status(500).send({
             menssage: 'ERROR IN THE UPDATE'
