@@ -21,6 +21,7 @@ router.put('/task/:_idTask', taskController.put);
 router.get('/user' , userController.getAll);
 router.post('/user', userController.post);
 router.get('/user/:username', userController.getByUsername);
+router.put('/user/:_idUser', userController.put);
 router.post('/singin', sessionController.post);
 
 //PROFILE

@@ -46,4 +46,23 @@ userController.post = async function(req, res){
     }
 };
 
+userController.put = async function(req, res){
+    try{    
+        const id= req.params._idUser;
+        const mail = req.body.mail;
+        const password = req.body.password;
+        const type = req.body.type;
+        const porfiles = req.body.porfiles;
+        const data = await userModel.update({_id:id}, {mail: mail, password:password, type:type, porfiles:porfiles});
+        console.log(data)
+        res.send(data);
+
+    }catch(err){
+        console.log(err);
+        res.status(500).send({
+            menssage: 'ERROR IN THE DATABASE'
+        });
+    }
+}
+
 module.exports = userController;

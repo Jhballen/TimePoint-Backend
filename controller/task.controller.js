@@ -60,8 +60,7 @@ taskController.put = async function(req, res){
         const profile = req.body.profile;
         const description = req.body.description;
         const evidence = req.body.evidence;
-        const data = await taskModel.update({_id:id}, {status: status},
-        {title:title}, {description:description}, {date:date}, {evidence:evidence}, {profile:profile} );
+        const data = await taskModel.update({_id:id}, {status: status, title:title, description:description, date:date, evidence:evidence, profile:profile});
         console.log(data)
         res.send(data);
 
