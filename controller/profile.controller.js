@@ -5,7 +5,6 @@ const jws = require('jsonwebtoken');
 
 profileController.getAll = async function(req, res){
     try {
-        const id = req.params.idProfile;
         const data = await profileModel.find();
         res.send(data);
     } catch (err) {
@@ -39,8 +38,9 @@ profileController.delete = async function(req, res) {
 
 profileController.update = async function(req, res){
     try {
-        const data = await profileModel({ _id: req.body._id }, 
-            {name: req.body.name, picture: req.body.profilePicture,tasks: req.body.tasks});
+        const data = await profileModel.update({ _id: req.body._id }, 
+            {name: req.body.name, profilePicture: req.body.profilePicture,tasks: req.body.tasks});
+        res.send(data);
     } catch (err) {
         res.status(500).send({
             menssage: 'ERROR IN THE UPDATE'
