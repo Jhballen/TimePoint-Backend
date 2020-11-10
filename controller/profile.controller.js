@@ -40,7 +40,6 @@ profileController.update = async function(req, res){
     try {
         const data = await profileModel.update({ _id: req.body._id }, 
             {name: req.body.name, profilePicture: req.body.profilePicture,tasks: req.body.tasks});
-            console.log(data);
         res.send(data);
     } catch (err) {
         res.status(500).send({
