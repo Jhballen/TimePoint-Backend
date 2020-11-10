@@ -24,10 +24,10 @@ profileController.getById = async function(req, res){
     }
 }
 
-profileController.delele = async function(req, res) {
+profileController.delete = async function(req, res) {
     try {
         const id = req.params.UserId;
-        const data = await profileModel.delele({_id:id});
+        const data = await profileModel.deleteOne({_id:id});
         res.send(data);
     } catch (err) {
         res.status(500).send({
